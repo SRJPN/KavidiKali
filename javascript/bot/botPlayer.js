@@ -3,7 +3,7 @@ var chance = new require('chance')();
 var EventEmitter = require('events').EventEmitter;
 
 const HOST = process.env.OPENSHIFT_NODEJS_IP || 'localhost';
-const PORT = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080;
 var querystring = require('querystring');
 var chooseCoin = require('./chooseCoin.js');
 var createHttpOption = function(url, method, cookie) {
